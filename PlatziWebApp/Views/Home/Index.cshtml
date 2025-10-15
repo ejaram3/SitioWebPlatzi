@@ -1,144 +1,471 @@
 ﻿@{
-    ViewData["Title"] = "Platzi Web App";
+    ViewData["Title"] = "La escuela de tecnología";
 }
 
-<div class="container mt-5">
-    <!-- Hero Section -->
-    <div class="text-center mb-5">
-        <h1 class="display-3 fw-bold text-primary">🚀 Bienvenido a Platzi Web App</h1>
-        <p class="lead text-muted">Una aplicación ASP.NET Core moderna con despliegue continuo en Azure</p>
-        <div class="mt-4">
-            <span class="badge bg-success fs-6 me-2">✓ .NET 9.0</span>
-            <span class="badge bg-info fs-6 me-2">✓ Azure App Service</span>
-            <span class="badge bg-warning text-dark fs-6">✓ GitHub Actions CI/CD</span>
-        </div>
-    </div>
-
-    <!-- Counter Section -->
-    <div class="row mb-5">
-        <div class="col-md-12">
-            <div class="card shadow-lg border-0">
-                <div class="card-body text-center p-5">
-                    <h2 class="card-title mb-4">🎯 Contador Interactivo</h2>
-                    <h1 class="display-1 fw-bold text-primary" id="counter">0</h1>
-                    <div class="mt-4">
-                        <button class="btn btn-success btn-lg me-2" onclick="increment()">
-                            <i class="bi bi-plus-circle"></i> Incrementar
-                        </button>
-                        <button class="btn btn-danger btn-lg me-2" onclick="decrement()">
-                            <i class="bi bi-dash-circle"></i> Decrementar
-                        </button>
-                        <button class="btn btn-secondary btn-lg" onclick="reset()">
-                            <i class="bi bi-arrow-clockwise"></i> Reiniciar
-                        </button>
+<!-- Hero Section - Platzi Style -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <h1 class="hero-title">La escuela de tecnología de <span class="text-platzi">Latinoamérica</span></h1>
+                <p class="hero-subtitle">Aprende desarrollo web, programación, marketing digital y más de 1500+ cursos profesionales</p>
+                <div class="hero-cta">
+                    <button class="btn btn-platzi btn-lg me-3">Inicia gratis</button>
+                    <button class="btn btn-outline-light btn-lg">Ver planes</button>
+                </div>
+                <div class="hero-stats mt-4">
+                    <div class="stat-item">
+                        <h3 class="stat-number">6M+</h3>
+                        <p class="stat-label">Estudiantes</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number">1500+</h3>
+                        <p class="stat-label">Cursos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number">17</h3>
+                        <p class="stat-label">Escuelas</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Features Cards -->
-    <div class="row g-4 mb-5">
-        <div class="col-md-4">
-            <div class="card h-100 shadow hover-card">
-                <div class="card-body text-center">
-                    <div class="fs-1 mb-3">💻</div>
-                    <h5 class="card-title">Desarrollo Moderno</h5>
-                    <p class="card-text">Construido con ASP.NET Core 9.0, el framework más moderno de Microsoft.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 shadow hover-card">
-                <div class="card-body text-center">
-                    <div class="fs-1 mb-3">☁️</div>
-                    <h5 class="card-title">Cloud Native</h5>
-                    <p class="card-text">Desplegado en Azure App Service con escalabilidad automática.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 shadow hover-card">
-                <div class="card-body text-center">
-                    <div class="fs-1 mb-3">🔄</div>
-                    <h5 class="card-title">CI/CD Automático</h5>
-                    <p class="card-text">Despliegue continuo configurado con GitHub Actions.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Info Section -->
-    <div class="row mb-5">
-        <div class="col-md-6">
-            <div class="card shadow-sm border-0 bg-light">
-                <div class="card-body">
-                    <h5 class="card-title">📚 Tecnologías Utilizadas</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-transparent">✓ ASP.NET Core MVC 9.0</li>
-                        <li class="list-group-item bg-transparent">✓ Bootstrap 5</li>
-                        <li class="list-group-item bg-transparent">✓ JavaScript ES6+</li>
-                        <li class="list-group-item bg-transparent">✓ Azure App Service</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card shadow-sm border-0 bg-light">
-                <div class="card-body">
-                    <h5 class="card-title">🎓 Curso de Platzi</h5>
-                    <p class="card-text">Esta aplicación fue creada como proyecto de práctica siguiendo las mejores prácticas de desarrollo web.</p>
-                    <a href="https://platzi.com" class="btn btn-primary" target="_blank">Visitar Platzi</a>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-illustration">
+                    <div class="floating-card">
+                        <div class="card-icon">💻</div>
+                        <h4>Desarrollo Web</h4>
+                        <p>Frontend, Backend & Fullstack</p>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-icon">🤖</div>
+                        <h4>Inteligencia Artificial</h4>
+                        <p>Machine Learning & Data Science</p>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-icon">☁️</div>
+                        <h4>Cloud Computing</h4>
+                        <p>Azure, AWS & DevOps</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Schools Section -->
+<div class="schools-section">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Todas las rutas de aprendizaje que necesitas en <span class="text-platzi">17 escuelas</span></h2>
+        
+        <div class="row g-4">
+            <div class="col-md-4 col-lg-3">
+                <div class="school-card">
+                    <div class="school-icon">🌐</div>
+                    <h3>Desarrollo Web</h3>
+                    <p class="school-routes">16 rutas</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="school-card">
+                    <div class="school-icon">📱</div>
+                    <h3>Desarrollo Móvil</h3>
+                    <p class="school-routes">9 rutas</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="school-card">
+                    <div class="school-icon">🤖</div>
+                    <h3>IA & Data Science</h3>
+                    <p class="school-routes">6 rutas</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="school-card">
+                    <div class="school-icon">🔒</div>
+                    <h3>Ciberseguridad</h3>
+                    <p class="school-routes">5 rutas</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="school-card">
+                    <div class="school-icon">☁️</div>
+                    <h3>Cloud & DevOps</h3>
+                    <p class="school-routes">9 rutas</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="school-card">
+                    <div class="school-icon">🎨</div>
+                    <h3>Diseño UX/UI</h3>
+                    <p class="school-routes">13 rutas</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="school-card">
+                    <div class="school-icon">📊</div>
+                    <h3>Marketing Digital</h3>
+                    <p class="school-routes">15 rutas</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="school-card">
+                    <div class="school-icon">💼</div>
+                    <h3>Negocios</h3>
+                    <p class="school-routes">11 rutas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="features-section">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Una plataforma completa para tu <span class="text-platzi">educación profesional</span></h2>
+        
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Aprende algo nuevo cada 5 minutos</h3>
+                    <p>Clases cortas y prácticas que se adaptan a tu ritmo de vida</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Rutas profesionales completas</h3>
+                    <p>De principiante a experto con una guía paso a paso</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Comunidad activa 24/7</h3>
+                    <p>Más de 6 millones de estudiantes compartiendo conocimiento</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Certificados profesionales</h3>
+                    <p>Valida tus conocimientos con certificados reconocidos</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h3>Aprende sin conexión</h3>
+                    <p>Descarga las clases y estudia desde cualquier lugar</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-item">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Profesores expertos</h3>
+                    <p>Aprende de líderes de la industria tecnológica</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section">
+    <div class="container text-center">
+        <h2 class="cta-title">Comienza a aprender <span class="text-platzi">hoy mismo</span></h2>
+        <p class="cta-subtitle">Únete a millones de estudiantes que están transformando sus carreras</p>
+        <div class="cta-buttons">
+            <button class="btn btn-platzi btn-lg me-3">Crear cuenta gratis</button>
+            <button class="btn btn-outline-light btn-lg">Ver planes</button>
+        </div>
+        <p class="cta-note mt-3">✓ Sin tarjeta de crédito  •  ✓ Acceso inmediato</p>
+    </div>
+</div>
+
 @section Scripts {
     <script>
-        let count = 0;
-        const counterElement = document.getElementById('counter');
-
-        function updateCounter() {
-            counterElement.textContent = count;
-            counterElement.classList.add('animate');
-            setTimeout(() => counterElement.classList.remove('animate'), 300);
-        }
-
-        function increment() {
-            count++;
-            updateCounter();
-        }
-
-        function decrement() {
-            count--;
-            updateCounter();
-        }
-
-        function reset() {
-            count = 0;
-            updateCounter();
-        }
+        // Animación para las tarjetas flotantes
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.floating-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
     </script>
 }
 
 <style>
-    .hover-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    :root {
+        --platzi-green: #98CA3F;
+        --platzi-dark: #121F3D;
+        --platzi-darker: #0A1526;
     }
 
-    .hover-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+    body {
+        background-color: var(--platzi-dark);
+        color: white;
     }
 
-    #counter.animate {
-        animation: pulse 0.3s ease;
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(135deg, var(--platzi-darker) 0%, var(--platzi-dark) 100%);
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
     }
 
-    @@keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: #B8C5D6;
+        margin-bottom: 2rem;
+    }
+
+    .text-platzi {
+        color: var(--platzi-green);
+    }
+
+    .btn-platzi {
+        background-color: var(--platzi-green);
+        border: none;
+        color: var(--platzi-dark);
+        font-weight: 700;
+        padding: 12px 32px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-platzi:hover {
+        background-color: #87B935;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(152, 202, 63, 0.3);
+    }
+
+    .btn-outline-light {
+        border: 2px solid white;
+        color: white;
+        font-weight: 600;
+        padding: 10px 32px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+        background-color: white;
+        color: var(--platzi-dark);
+        transform: translateY(-2px);
+    }
+
+    .hero-stats {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .stat-item {
+        text-align: left;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--platzi-green);
+        margin: 0;
+    }
+
+    .stat-label {
+        color: #B8C5D6;
+        margin: 0;
+    }
+
+    /* Floating Cards */
+    .hero-illustration {
+        position: relative;
+        height: 500px;
+    }
+
+    .floating-card {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 20px;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-card.card-2 {
+        top: 150px;
+        right: 100px;
+        animation-delay: 1s;
+    }
+
+    .floating-card.card-3 {
+        top: 300px;
+        left: 50px;
+        animation-delay: 2s;
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .floating-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .floating-card p {
+        font-size: 0.9rem;
+        color: #B8C5D6;
+        margin: 0;
+    }
+
+    @@keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    /* Schools Section */
+    .schools-section {
+        padding: 80px 0;
+        background-color: var(--platzi-dark);
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+    }
+
+    .school-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .school-card:hover {
+        background: rgba(152, 202, 63, 0.1);
+        border-color: var(--platzi-green);
+        transform: translateY(-5px);
+    }
+
+    .school-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .school-card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .school-routes {
+        color: var(--platzi-green);
+        font-weight: 600;
+        margin: 0;
+    }
+
+    /* Features Section */
+    .features-section {
+        padding: 80px 0;
+        background: linear-gradient(180deg, var(--platzi-dark) 0%, var(--platzi-darker) 100%);
+    }
+
+    .feature-item {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .feature-item h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .feature-item p {
+        color: #B8C5D6;
+        font-size: 1rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, var(--platzi-green) 0%, #87B935 100%);
+        color: var(--platzi-dark);
+    }
+
+    .cta-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .cta-section .text-platzi {
+        color: var(--platzi-darker);
+    }
+
+    .cta-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+        color: var(--platzi-darker);
+    }
+
+    .cta-note {
+        color: var(--platzi-darker);
+        font-weight: 600;
+    }
+
+    .cta-section .btn-platzi {
+        background-color: var(--platzi-dark);
+        color: white;
+    }
+
+    .cta-section .btn-platzi:hover {
+        background-color: var(--platzi-darker);
+    }
+
+    .cta-section .btn-outline-light {
+        border-color: var(--platzi-dark);
+        color: var(--platzi-dark);
+    }
+
+    .cta-section .btn-outline-light:hover {
+        background-color: var(--platzi-dark);
+        color: white;
+    }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-stats {
+            gap: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+        }
     }
 </style>
