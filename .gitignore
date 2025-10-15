@@ -51,5 +51,10 @@ CodeCoverage/
 # NUnit
 *.VisualState.xml
 TestResult.xml
-nunit-*.xml.DS_Store
+nunit-*.xml
+
+# macOS
 .DS_Store
+
+# Build output directory
+out/
