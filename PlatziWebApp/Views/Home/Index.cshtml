@@ -1,8 +1,144 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Platzi Web App";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-3 fw-bold text-primary">🚀 Bienvenido a Platzi Web App</h1>
+        <p class="lead text-muted">Una aplicación ASP.NET Core moderna con despliegue continuo en Azure</p>
+        <div class="mt-4">
+            <span class="badge bg-success fs-6 me-2">✓ .NET 9.0</span>
+            <span class="badge bg-info fs-6 me-2">✓ Azure App Service</span>
+            <span class="badge bg-warning text-dark fs-6">✓ GitHub Actions CI/CD</span>
+        </div>
+    </div>
+
+    <!-- Counter Section -->
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="card shadow-lg border-0">
+                <div class="card-body text-center p-5">
+                    <h2 class="card-title mb-4">🎯 Contador Interactivo</h2>
+                    <h1 class="display-1 fw-bold text-primary" id="counter">0</h1>
+                    <div class="mt-4">
+                        <button class="btn btn-success btn-lg me-2" onclick="increment()">
+                            <i class="bi bi-plus-circle"></i> Incrementar
+                        </button>
+                        <button class="btn btn-danger btn-lg me-2" onclick="decrement()">
+                            <i class="bi bi-dash-circle"></i> Decrementar
+                        </button>
+                        <button class="btn btn-secondary btn-lg" onclick="reset()">
+                            <i class="bi bi-arrow-clockwise"></i> Reiniciar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Cards -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card h-100 shadow hover-card">
+                <div class="card-body text-center">
+                    <div class="fs-1 mb-3">💻</div>
+                    <h5 class="card-title">Desarrollo Moderno</h5>
+                    <p class="card-text">Construido con ASP.NET Core 9.0, el framework más moderno de Microsoft.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow hover-card">
+                <div class="card-body text-center">
+                    <div class="fs-1 mb-3">☁️</div>
+                    <h5 class="card-title">Cloud Native</h5>
+                    <p class="card-text">Desplegado en Azure App Service con escalabilidad automática.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow hover-card">
+                <div class="card-body text-center">
+                    <div class="fs-1 mb-3">🔄</div>
+                    <h5 class="card-title">CI/CD Automático</h5>
+                    <p class="card-text">Despliegue continuo configurado con GitHub Actions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">📚 Tecnologías Utilizadas</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent">✓ ASP.NET Core MVC 9.0</li>
+                        <li class="list-group-item bg-transparent">✓ Bootstrap 5</li>
+                        <li class="list-group-item bg-transparent">✓ JavaScript ES6+</li>
+                        <li class="list-group-item bg-transparent">✓ Azure App Service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">🎓 Curso de Platzi</h5>
+                    <p class="card-text">Esta aplicación fue creada como proyecto de práctica siguiendo las mejores prácticas de desarrollo web.</p>
+                    <a href="https://platzi.com" class="btn btn-primary" target="_blank">Visitar Platzi</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        let count = 0;
+        const counterElement = document.getElementById('counter');
+
+        function updateCounter() {
+            counterElement.textContent = count;
+            counterElement.classList.add('animate');
+            setTimeout(() => counterElement.classList.remove('animate'), 300);
+        }
+
+        function increment() {
+            count++;
+            updateCounter();
+        }
+
+        function decrement() {
+            count--;
+            updateCounter();
+        }
+
+        function reset() {
+            count = 0;
+            updateCounter();
+        }
+    </script>
+}
+
+<style>
+    .hover-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+    }
+
+    #counter.animate {
+        animation: pulse 0.3s ease;
+    }
+
+    @@keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+</style>
